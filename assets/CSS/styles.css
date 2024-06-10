@@ -1,0 +1,88 @@
+.light .header {
+    display: flex;
+    justify-content: right;
+    border: 5px groove black;
+    width: 99%;
+    height: 5rem;
+    background-image: url(../photos/images.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.dark .header {
+    display: flex;
+    justify-content: right;
+    border: 5px groove black;
+    width: 99%;
+    height: 5rem;
+    background-image: url(../photos/8-bit-night-sky-vyhgx5uexdbpp0xi.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.light .ball {
+    border-right: 5px solid black;
+    width: 50%;
+}
+
+.dark .ball {
+    border-right: 5px solid rgb(255, 255, 255);
+    width: 50%;
+
+}
+
+.light .ball-title {
+    background-image: linear-gradient(rgb(255, 208, 0), yellow);
+    border-radius: 100%;
+    margin: 5px;
+    padding: 6.5em;
+    height: 99%;
+    width: 73%;
+    position: relative;
+    left: 4rem;
+    bottom: 3px;
+    color: black;
+    border: 2px solid black;
+}
+
+.dark .ball-title {
+    background-image: linear-gradient(rgb(153, 164, 184), rgb(129, 129, 121));
+    border-radius: 100%;
+    margin: 5px;
+    padding: 6.5em;
+    height: 99%;
+    width: 73%;
+    position: relative;
+    left: 2.5em;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.dark {
+    background-image: linear-gradient(rgba(42, 0, 40, 0.815),black, rgb(0, 0, 0), rgb(43, 0, 43));
+    height: 100vh;
+    color: #dfdfdf
+}
+
+.light {
+    background-image: linear-gradient(rgba(255, 166, 0, 0.714), yellow, rgba(128, 0, 128, 0.659));
+    color: black;
+    height: 100vh;
+}
+
+.light .footer{
+    border-top: 5px solid black;
+}
+
+.dark .footer{
+    border-top: 5px solid rgb(255, 255, 255);
+}
+
+.switch {
+margin: 1rem;
+}
+
+
+
+  

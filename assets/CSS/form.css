@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+header {
+margin-left: 6px;
+    
+}
+
+main {
+    display: flex;
+
+}
+
+.form {
+    width: 50%;
+}
+
+.card {
+    margin: 1rem;
+}
+
+label {
+    font-size: large;
+    font-weight: bold;
+}
+
+#post-username {
+    width: 55em;
+    height: 2.5em;
+}
+
+#post-title {
+    width: 55em;
+    height: 2.5em;
+}
+
+.input-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input:hover {
+    background-color: #e8eaed;
+}
+textarea {
+    background-color: #ffffff;
+    border-radius: 2px;
+    border-width: 0;
+    font-size: 1rem;
+    height: 45px;
+    line-height: 20px;
+    margin: 0;
+    margin-top: 10px;
+    max-width: 100%;
+    padding: 8px 8px 8px 8px;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.2s, 0.2s;
+    transition-property: background-color, color;
+    transition-timing-function: ease, ease;
+    vertical-align: middle;
+    width: 100%;
+}
+
+button {
+    background-color:#3e31baa2;;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    letter-spacing: 0.21px;
+    line-height: 16px;
+    max-width: 255px;
+    padding: 20px 52px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin-top: 1rem;
+  }
