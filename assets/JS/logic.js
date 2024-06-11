@@ -1,14 +1,12 @@
 const themeSwitcher = document.querySelector('#theme-switcher');
 const container = document.querySelector('.container');
-const header = document.querySelector('.header')
 let mode = 'light';
 
 themeSwitcher.addEventListener('click', function () {
     if (mode === 'light') {
         mode = 'dark';
         container.setAttribute('class', 'dark');
-    }
-    else {
+    } else {
         mode = 'light';
         container.setAttribute('class', 'light');
     }
@@ -18,61 +16,72 @@ const userName = document.querySelector('#post-username');
 const title = document.querySelector('#post-title');
 const content = document.querySelector('#post-content');
 const submitButton = document.querySelector('#submit');
-const body = document.body;
-const main = document.body.main;
-const divEl = document.createElement('div');
-const h2El = document.createElement('h2');
-const userNameEl = document.createElement('p');
-const titleEl = document.createElement('p');
-const contentEl = document.createElement('p');
-const blogPostArray = []
+const backButton = document.querySelector('#back-button');
+
 
 function saveBlogPost() {
-
     const blogContent = {
         userName: userName.value.trim(),
         title: title.value.trim(),
         content: content.value.trim(),
     };
 
-    blogPostArray.push(blogContent)
-    console.log(blogPostArray)
-    localStorage.setItem('blogPostArray', JSON.stringify(blogPostArray));
-};
+    let blogPostArray = JSON.parse(localStorage.getItem('data')) || [];
+
+    blogPostArray.push(blogContent);
+    console.log(blogPostArray);
+    localStorage.setItem('data', JSON.stringify(blogPostArray));
+}
+
+function createPost(post) {
+    const main = document.querySelector('main');
+    const divEl = document.createElement('div');
+    const h2El = document.createElement('h2');
+    const userNameEl = document.createElement('p');
+    const titleEl = document.createElement('p');
+    const contentEl = document.createElement('p');
 
 
-function createPost() {
-    divEl.setAttribute();
-    h2El.setAttribute();
-    userNameEl.setAttribute();
-    titleEl.setAttribute();
-    contentEl.setAttribute();
+    divEl.setAttribute('class', 'card');
 
-    main.appendChild(divEl);
+
+    h2El.textContent = 'Blog Post';
+    userNameEl.textContent = `User: ${post.userName}`;
+    titleEl.textContent = `Title: ${post.title}`;
+    contentEl.textContent = `Content: ${post.content}`;
+
     divEl.appendChild(h2El);
     divEl.appendChild(userNameEl);
     divEl.appendChild(titleEl);
     divEl.appendChild(contentEl);
+    main.appendChild(divEl);
 }
 
 
-function renderLastPost() {
+function renderPost() {
 
-    const lastContent = JSON.parse(localStorage.getItem('blogContent'));
+    const blogPostArray = JSON.parse(localStorage.getItem('data')) || [];
 
-    if (lastContent !== null) {
-        document.getElementById('last-user').innerHTML = lastContent.userName;
-        document.getElementById('last-title').innerHTML = lastContent.title;
-        document.getElementById('last-Post').innerHTML = lastContent.content;
-    }
-};
+    blogPostArray.forEach(data => {
+        createPost(data);
+    });
+}
 
+if (submitButton) {
+    submitButton.addEventListener('click', function (event) {
+        event.preventDefault();
 
+        saveBlogPost();
+         window.location.href = 'blog.html';
+    });
+}
 
-submitButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    saveBlogPost();
-    renderLastPost();
-    createPost();
-});
+if (window.location.pathname.includes('blog.html')) {
+    renderPost();
+}
 
+if (backButton) {
+    backButton.addEventListener('click', function (event) {
+        window.location.href = 'index.html';
+    });
+}

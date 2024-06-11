@@ -10,17 +10,21 @@ body {
 
 header {
     margin: 5px;
+    display: flex;
 }
 
 main {
-    display: flex;
+    display: inline;
     margin: 5px;
-    
 }
+
+.card {
+    border: 5px solid black;
+}
+
 
 footer{
     border-top: 5px solid black;
-    float:bottom;
 }
 
 button {

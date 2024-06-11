@@ -10,6 +10,11 @@
     background-size: 100% 100%;
 }
 
+#theme-switcher{
+    background-color: rgba(0, 255, 255, 0);
+    border: 0px;
+}
+
 .dark .header {
     display: flex;
     justify-content: right;
@@ -20,6 +25,15 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+.light .sun-moon{
+    position: relative;
+    font-size: 1.3em;
+}
+.dark .sun-moon{
+    position: relative;
+    font-size: 1.3em;
 }
 
 .light .ball {
@@ -66,13 +80,15 @@
 }
 
 .light {
-    background-image: linear-gradient(rgba(255, 166, 0, 0.714), yellow, rgba(128, 0, 128, 0.659));
+    background-image: linear-gradient(rgba(255, 166, 0, 0.714), yellow);
+    background-size: cover;
     color: black;
     height: 100vh;
 }
 
 .light .footer{
     border-top: 5px solid black;
+    background-color: rgb(249, 255, 83);
 }
 
 .dark .footer{
@@ -83,6 +99,8 @@
 margin: 1rem;
 }
 
-
+.error{
+    
+}
 
   
