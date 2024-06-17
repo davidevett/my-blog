@@ -59,7 +59,6 @@ function createPost(post) {
 
 
 function renderPost() {
-
     const blogPostArray = JSON.parse(localStorage.getItem('data')) || [];
 
     blogPostArray.forEach(data => {
