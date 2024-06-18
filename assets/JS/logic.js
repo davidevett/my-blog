@@ -71,16 +71,16 @@ if (submitButton) {
         event.preventDefault();
 
         saveBlogPost();
-         window.location.href = './blog.html';
+         window.location.href = 'blog.html';
     });
 }
 
-if (window.location.pathname.includes('./blog.html')) {
+if (window.location.pathname.includes('blog.html')) {
     renderPost();
 }
 
 if (backButton) {
-    backButton.addEventListener('click', function () {
-        window.location.href = './index.html';
+    backButton.addEventListener('click', function (event) {
+        window.location.href = 'index.html';
     });
 }
